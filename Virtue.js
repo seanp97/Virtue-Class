@@ -107,6 +107,20 @@ class Virtue {
         }
     }
 
+    arrMin(x, y) {
+        this.x = x;
+        this.y = y;
+        x = this.arrSum(x);
+        y = this.arrSum(y);
+
+        if(x < y) {
+            return x + ": First argument is smaller";
+        }
+        else {
+            return y + ": Second argument is smaller";
+        }
+    }
+
     addArray(x, y) {
         this.x = x;
         this.y = y;
@@ -115,5 +129,49 @@ class Virtue {
 
     vtPowOf(x, y) {
         return x**y;
+    }
+
+    vtUpperCase(x) {
+        if (x[0] == x[0].toUpperCase()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    vtCheckNegative(x) {
+        if (x > 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    vtMultiplication(x, y) {
+        this.x = x;
+        return x * y;
+    }
+
+    vtDivision(x, y) {
+        this.x = x;
+        if (x > 0 && y > 0) {
+            return x / y;
+        }
+    }
+
+    vtSubtraction(x, y) {
+        this.x = x;
+        this.y = y;
+
+        return x - y;
+    }
+
+    vtAddition(x, y) {
+        this.x = x;
+        this.y = y;
+
+        return x + y;
     }
 }
