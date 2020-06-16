@@ -1,6 +1,5 @@
 
 class Virtue {
-    constructor() {}
 
     numMax(x, y) {
         this.x = x;
