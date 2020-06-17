@@ -346,7 +346,7 @@ class Virtue {
         let second = newDate.getSeconds();
         let AmPm;
 
-        if (hour <= 12) {
+        if (hour < 12) {
             AmPm = "AM";
         }
         else {
