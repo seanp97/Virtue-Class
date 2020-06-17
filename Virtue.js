@@ -127,6 +127,21 @@ class Virtue {
         return this.arrSum(x) + this.arrSum(y);
     }
 
+    containInString(word, string) {
+        this.word = word;
+        this.string = string;
+
+        word = word.toLowerCase();
+        string = string.toLowerCase();
+
+        if (string.toLowerCase().includes(word.toLowerCase())) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     vtPowOf(x, y) {
         return x**y;
     }
