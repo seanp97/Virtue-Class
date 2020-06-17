@@ -331,4 +331,115 @@ class Virtue {
             return dayName + " " + day + "th " + month + " " + year;
         }
     }
+
+    vtNowDate(time = "") {
+
+        // Add "Time" as parameter to get time.
+        this.time = time;
+        time = time.toLowerCase();
+        let newDate = new Date();
+        let year = newDate.getFullYear();
+        let month = newDate.getMonth();
+        let day = newDate.getDate();
+        let hour = newDate.getHours();
+        let minute = newDate.getMinutes();
+        let second = newDate.getSeconds();
+        let AmPm;
+
+        if (hour <= 12) {
+            AmPm = "AM";
+        }
+        else {
+            AmPm = "PM";
+        }
+
+        if(second < 10) {
+            second = "0" + second;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        let nowTime = hour + ":" + minute + ":" + second;
+
+        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        let dayName = daysOfWeek[newDate.getDay()];
+
+        if (month == 0) {
+            month = "January";
+        }
+        if (month == 1) {
+            month = "February";
+        }
+        if (month == 2) {
+            month = "March";
+        }
+        if (month == 3) {
+            month = "April";
+        }
+        if (month == 4) {
+            month = "May";
+        }
+        if (month == 5) {
+            month = "June";
+        }
+        if (month == 6) {
+            month = "July";
+        }
+        if (month == 7) {
+            month = "August";
+        }
+        if (month == 8) {
+            month = "September";
+        }
+        if (month == 9) {
+            month = "October";
+        }
+        if (month == 10) {
+            month = "November";
+        }
+        if (month == 11) {
+            month = "December";
+        }
+
+        if (day == 1 || day == 21 || day == 31) {
+            if (time == "Time".toLowerCase()) {
+                return dayName + " " + day + "st " + month + " " + year + " - " + nowTime + AmPm;
+            }
+            else {
+                return dayName + " " + day + "st " + month + " " + year;
+            }
+        }
+        if (day == 2 || day == 22) {
+            if (time == "Time".toLowerCase()) {
+                return dayName + " " + day + "nd " + month + " " + year + " - " + nowTime + AmPm;
+            }
+            else {
+                return dayName + " " + day + "nd " + month + " " + year;
+            }
+        }
+        if (day == 3 || day == 23) {
+            if (time == "Time".toLowerCase()) {
+                return dayName + " " + day + "rd " + month + " " + year + " - " + nowTime + AmPm;
+            }
+            else {
+                return dayName + " " + day + "rd " + month + " " + year;
+            }
+        }
+        if (day == 4 || day == 5 || day == 6 || day == 7 || day == 8 || day == 9 || day == 10 || day == 12 || day == 13 || day || 14 || day == 15 || day == 16 || day == 17 || day == 18 || day == 19 || day == 20 || day == 24 || day == 25 || day == 26 || day == 27 || day == 28 || day == 29 || day == 30) {
+            if (time == "Time".toLowerCase()) {
+                return dayName + " " + day + "th " + month + " " + year + " - " + nowTime + AmPm;
+            }
+            else {
+                return dayName + " " + day + "th " + month + " " + year;
+            }
+        }
+    }
+
+    vtInterval(valInt, funcName) {
+        this.valInt = valInt;
+        this.funcName = funcName;
+        setInterval(function () {
+            funcName();
+        }, valInt);
+    }
 }
